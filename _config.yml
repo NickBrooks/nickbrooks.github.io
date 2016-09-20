@@ -1,3 +1,5 @@
 name: Nick Brooks
 markdown: kramdown
 permalink: /blog/:title
+gems:
+  - jekyll-sitemap
