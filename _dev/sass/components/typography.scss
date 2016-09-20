@@ -1,11 +1,26 @@
-p, li, h1, h2, h3, h4, h5, h6 {
-    line-height: 1.7em;
+p, ul, ol, dl {
+    margin: 0 0 1.75em 0;
+    text-rendering: geometricPrecision;
 }
 
-p {
-    font-size: 1.4em;
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Sanchez', serif;
+    font-weight: bold;
+    margin: 1.3em 0 0.8em;
 }
 
-li {
-    font-size: 1.2em;
+.meta {
+    font-family: 'Sanchez', serif;
+    color: #999;
+}
+
+a {
+    color: #1E88E5;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a:hover {
+    color: #1E88E5;
+    text-decoration: underline;
 }
