@@ -1,4 +1,5 @@
 name: Nick Brooks
+repository: nickbrooks/nickbrooks.github.io.
 markdown: kramdown
 permalink: /blog/:title
 gems:
