@@ -64,4 +64,4 @@ gulp.task('clean', function () {
 });
 
 // Start everything with the default task
-gulp.task('default', ['clean', 'compile-sass', 'build-jekyll', 'server', 'watch']);
+gulp.task('default', ['compile-sass', 'build-jekyll', 'server', 'watch']);

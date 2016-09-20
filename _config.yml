@@ -1,7 +1,7 @@
 name: Nick Brooks
 repository: nickbrooks/nickbrooks.github.io.
 markdown: kramdown
-permalink: /blog/:title
+permalink: pretty
 gems:
   - jekyll-sitemap
 exclude:
