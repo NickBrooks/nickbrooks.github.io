@@ -4,9 +4,13 @@ const gulp = require('gulp'),
     gutil = require('gulp-util'),
     plumber = require('gulp-plumber'),
     rename = require('gulp-rename'),
+    concat = require('gulp-concat'),
     minifyCSS = require('gulp-minify-css'),
     prefixer = require('gulp-autoprefixer'),
     connect = require('gulp-connect'),
+    sourcemaps = require('gulp-sourcemaps'),
+    jshint = require('gulp-jshint'),
+    uglify = require('gulp-uglify'),
     del = require('del'),
     cp = require('child_process');
 
@@ -30,16 +34,33 @@ gulp.task('compile-sass', () => {
             gutil.log(gutil.colors.red(error.message));
             gulp.task('compile-sass').emit('end');
         }))
+        .pipe(concat('app.css'))
         .pipe(sass())
         .pipe(prefixer('last 3 versions', 'ie 9'))
         .pipe(minifyCSS())
         .pipe(rename({ dirname: dist + '/css' }))
+        .pipe(sourcemaps.write('./maps'))
+        .pipe(gulp.dest('./'));
+});
+
+// Compile js
+gulp.task('compile-js', () => {
+    return gulp.src(paths.js)
+        .pipe(plumber((error) => {
+            gutil.log(gutil.colors.red(error.message));
+            gulp.task('compile-js').emit('end');
+        }))
+        .pipe(concat('app.js'))
+        .pipe(jshint('.jshintrc'))
+        .pipe(uglify())
+        .pipe(rename({ dirname: dist + '/js' }))
+        .pipe(sourcemaps.write('./maps'))
         .pipe(gulp.dest('./'));
 });
 
 // Rebuild Jekyll 
 gulp.task('build-jekyll', (code) => {
-    return cp.spawn('C:\\Ruby23\\bin\\jekyll.bat', ['serve', '--incremental'], { stdio: 'inherit' })
+    return cp.spawn('C:\\Ruby23\\bin\\jekyll.bat', ['serve'], { stdio: 'inherit' })
         .on('error', (error) => gutil.log(gutil.colors.red(error.message)))
         .on('close', code)
 })
@@ -55,6 +76,7 @@ gulp.task('server', () => {
 // Watch files for new pretty things
 gulp.task('watch', () => {
     gulp.watch(paths.scss, ['compile-sass']);
+    gulp.watch(paths.scss, ['compile-js']);
     gulp.watch(paths.jekyll, ['build-jekyll']);
 });
 
@@ -64,4 +86,4 @@ gulp.task('clean', function () {
 });
 
 // Start everything with the default task
-gulp.task('default', ['compile-sass', 'build-jekyll', 'server', 'watch']);
+gulp.task('default', ['compile-sass', 'compile-js', 'build-jekyll', 'server', 'watch']);
