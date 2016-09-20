@@ -51,7 +51,7 @@ gulp.task('compile-js', () => {
             gulp.task('compile-js').emit('end');
         }))
         .pipe(concat('app.js'))
-        .pipe(jshint('.jshintrc'))
+        .pipe(jshint())
         .pipe(uglify())
         .pipe(rename({ dirname: dist + '/js' }))
         .pipe(sourcemaps.write('./maps'))

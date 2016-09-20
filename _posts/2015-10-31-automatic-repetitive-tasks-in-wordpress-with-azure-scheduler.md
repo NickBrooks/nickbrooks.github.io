@@ -2,6 +2,7 @@
 layout: post
 title: "Automatic, Repetitive Tasks in WordPress with Azure Scheduler"
 date: 2015-10-31
+hero: https://images.unsplash.com/photo-1474314005122-3c07c4df1224?dpr=1&auto=format&crop=entropy&fit=crop&w=1500&h=1000&q=80&cs=tinysrgb
 ---
 
 One of the sometimes awkward things about building WordPress sites is it can be difficult to perform automated, repetitive tasks. Something like cleaning the database every week or sending an email at the end of the day to provide a summary of the day's activity. Sure, we can use `wp_cron` but that can be over the top.
