@@ -4,3 +4,9 @@ markdown: kramdown
 permalink: /blog/:title
 gems:
   - jekyll-sitemap
+exclude:
+  - package.json
+  - _dev
+  - node_modules
+  - gulpfile.js
+  - readme.md

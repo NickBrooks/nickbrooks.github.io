@@ -1,3 +1,7 @@
+# Folders
 _site/
 node_modules/
+
+# Files
 Gemfile.lock
+.jekyll-metadata
