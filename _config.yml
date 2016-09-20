@@ -1,2 +1,3 @@
 name: Nick Brooks
 markdown: kramdown
+ermalink: /blog/:title
