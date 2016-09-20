@@ -76,7 +76,7 @@ gulp.task('server', () => {
 // Watch files for new pretty things
 gulp.task('watch', () => {
     gulp.watch(paths.scss, ['compile-sass']);
-    gulp.watch(paths.scss, ['compile-js']);
+    gulp.watch(paths.js, ['compile-js']);
     gulp.watch(paths.jekyll, ['build-jekyll']);
 });
 

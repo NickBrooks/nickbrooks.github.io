@@ -35,3 +35,6 @@ http://rubyinstaller.org/downloads/
 ##### Gulp with Jekyll
 * https://aaronlasseigne.com/2016/02/03/using-gulp-with-jekyll/
 * https://codegaze.github.io/2016/01/09/a-jekyll-workflow-with-gulp/
+
+##### Instagram token generator
+* http://instagram.pixelunion.net/
