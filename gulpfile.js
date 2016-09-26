@@ -20,16 +20,17 @@ const base_path = './',
     dist = base_path + 'dist',
     paths = {
         js: src + '/js/*.js',
-        scss: [src + '/sass/*.scss',
+        scssWatch: [src + '/sass/*.scss',
             src + '/sass/**/* .scss',
             src + '/sass/**/**/*.scss'],
+        scssGenerate: src + '/sass/app.scss',
         jekyll: ['index.html', '_posts/*', '_layouts/*', '_includes/*', 'dist/*', 'dist/**/*']
     };
 
 
 // Compile sass to css
 gulp.task('compile-sass', () => {
-    return gulp.src(paths.scss)
+    return gulp.src(paths.scssGenerate)
         .pipe(plumber((error) => {
             gutil.log(gutil.colors.red(error.message));
             gulp.task('compile-sass').emit('end');
@@ -75,7 +76,7 @@ gulp.task('server', () => {
 
 // Watch files for new pretty things
 gulp.task('watch', () => {
-    gulp.watch(paths.scss, ['compile-sass']);
+    gulp.watch(paths.scssWatch, ['compile-sass']);
     gulp.watch(paths.js, ['compile-js']);
     gulp.watch(paths.jekyll, ['build-jekyll']);
 });

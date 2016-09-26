@@ -2,6 +2,7 @@
 layout: post
 title: "Backup a MySQL VM to Azure Storage using Powershell"
 date: 2015-12-17
+hero: //i.imgur.com/UOcO9Fg.jpg
 ---
 
 Azure is [kick arse for many reasons](//worldsgreatestazuredemo.com/), we know that. But one area it can make you a little irate is when you're dealing with MySQL databases.
