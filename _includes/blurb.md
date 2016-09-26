@@ -1,0 +1,3 @@
+### Hi there, I'm **Nick Brooks**!
+
+I'm silly. [Read my posts](/blog)...

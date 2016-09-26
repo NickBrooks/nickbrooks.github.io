@@ -5,7 +5,7 @@ home-hero: //i.imgur.com/qa4buz3.jpg
 body-class: home
 ---
 <div class="blurb">
-	<h1>Hi there, I'm Nick Brooks!</h1>
-	<p>I'm silly. <a href="/blog">Read my posts...</a></p>
+	{% capture blurb-include %}{% include blurb.md %}{% endcapture %}
+	{{ blurb-include | markdownify }}	
 </div>
 {% include instagram-feed.html %}
