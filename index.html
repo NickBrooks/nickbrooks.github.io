@@ -1,11 +1,6 @@
 ---
 layout: default
-title: //NickBrooks.co
-home-hero: //i.imgur.com/qa4buz3.jpg
-body-class: home
+title: Home
 ---
-<div class="blurb">
-	{% capture blurb-include %}{% include blurb.md %}{% endcapture %}
-	{{ blurb-include | markdownify }}	
-</div>
-{% include instagram-feed.html %}
+
+<h1>{{ "Hello World!" | downcase }}</h1>

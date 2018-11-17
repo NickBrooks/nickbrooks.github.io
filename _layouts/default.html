@@ -1,19 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
-
-{% include head.html %}
-
-<body class="{{ page.body-class }}">    
-    {% include menu.html %}
-    {% include hero.html %}
-    <div class="container">
-        <div class="content">
-            {{ content }}
-        </div>
-    </div>
-    {% include footer.html %}
-    
-{% include scripts.html %}
-</body>
-
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>{{ page.title }}</title>
+    <link rel="stylesheet" href="/assets/css/styles.css" />
+    {% feed_meta %} {% seo %}
+  </head>
+  <body>
+    {% include navigation.html %} {{ content }}
+  </body>
 </html>

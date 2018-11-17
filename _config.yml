@@ -1,12 +1,19 @@
-name: Nick Brooks
-repository: nickbrooks/nickbrooks.github.io.
-markdown: kramdown
-permalink: pretty
-gems:
-  - jekyll-sitemap
-exclude:
-  - package.json
-  - _dev
-  - node_modules
-  - gulpfile.js
-  - readme.md
+collections:
+  authors:
+    output: true
+
+defaults:
+  - scope:
+      path: ""
+      type: "authors"
+    values:
+      layout: "author"
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+  - scope:
+      path: ""
+    values:
+      layout: "default"
